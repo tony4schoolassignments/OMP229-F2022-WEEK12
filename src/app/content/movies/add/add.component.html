@@ -1,0 +1,100 @@
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1>Add Movie</h1>
+
+            <!-- Message Area -->
+            <div #messageArea class="alert alert-danger" *ngIf="!isSuccessfull">
+                {{ errorMessage }}
+            </div>
+
+            <form class="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+
+               
+                <div class="form-group">
+                    <label for="nameTextField">Movie Title</label>
+                    <input type="text" class="form-control"
+                    [(ngModel)]="form.title" #name="ngModel"
+                    id="nameTextField"
+                    placeholder="Enter the Movie Title"
+                    name="name"                     
+                    required>
+
+                    <div *ngif="name.errors?.['required'] && f.submitted">Movie Title is Required</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="yearTextField">Year</label>
+                    <input type="number" class="form-control"
+                    [(ngModel)]="form.year" #year="ngModel"
+                    id="yearTextField"
+                    placeholder="Enter the Release Year"
+                    name="year"                     
+                    required>
+
+                    <div *ngif="year.errors?.['required'] && f.submitted">Movie year is Required</div>
+            
+                </div>
+
+                <div class="form-group">
+                    <label for="directorTextField">Director</label>
+                    <input type="text" class="form-control"
+                    [(ngModel)]="form.director" #director="ngModel"
+                    id="directorTextField"
+                    placeholder="Enter the Director's Name"
+                    name="director"                     
+                    required>
+
+                    <div *ngif="director.errors?.['required'] && f.submitted">Movie year is Required</div>
+            
+                </div>   
+                
+                <div class="form-group">
+                    <label for="genreTextArea">Genre</label>
+                    <input type="text" class="form-control"
+                    [(ngModel)]="form.genre" #genre="ngModel"
+                    id="genreTextArea"
+                    placeholder="Enter the Movie genre"
+                    name="genre"                     
+                    required>
+
+                    <div *ngif="genre.errors?.['required'] && f.submitted">Movie year is Required</div>
+            
+                </div>   
+
+                <div class="form-group">
+                    <label for="genreTextArea">Genre</label>
+                    <input type="text" class="form-control"
+                    id="genreTextArea"
+                    [(ngModel)]="form.genre" #genre="ngModel"
+                    placeholder="Enter the Movie genre"
+                    name="genre"
+                    required >
+
+                    <div *ngif="genre.errors?.['required'] && f.submitted">Movie genre is Required</div>
+            
+                </div>
+
+                <div class="form-group">
+                    <label for="runtimeTextField">Runtime (in minutes)</label>
+                    <input type="number" class="form-control"
+                    id="runtimeTextField"
+                    [(ngModel)]="form.runtime" #runtime="ngModel"
+                    placeholder="Enter the Movie's Runtime in Minutes"
+                    name="runtime"                    
+                    required>
+                    <div *ngif="runtime.errors?.['required'] && f.submitted">Movie runtime is Required</div>
+            
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/movies/list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
