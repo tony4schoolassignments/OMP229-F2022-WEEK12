@@ -14,13 +14,13 @@
                 <div class="form-group">
                     <label for="nameTextField">Movie Title</label>
                     <input type="text" class="form-control"
-                    [(ngModel)]="form.title" #name="ngModel"
+                    [(ngModel)]="form.name" #name="ngModel"
                     id="nameTextField"
                     placeholder="Enter the Movie Title"
                     name="name"                     
                     required>
 
-                    <div *ngif="name.errors?.['required'] && f.submitted">Movie Title is Required</div>
+                    <div *ngIf="name.errors?.['required'] && f.submitted">Movie Title is Required</div>
                 </div>
 
                 <div class="form-group">
@@ -32,7 +32,7 @@
                     name="year"                     
                     required>
 
-                    <div *ngif="year.errors?.['required'] && f.submitted">Movie year is Required</div>
+                    <div *ngIf="year.errors?.['required'] && f.submitted">Movie year is Required</div>
             
                 </div>
 
@@ -45,7 +45,7 @@
                     name="director"                     
                     required>
 
-                    <div *ngif="director.errors?.['required'] && f.submitted">Movie year is Required</div>
+                    <div *ngIf="director.errors?.['required'] && f.submitted">Movie Director is Required</div>
             
                 </div>   
                 
@@ -58,22 +58,9 @@
                     name="genre"                     
                     required>
 
-                    <div *ngif="genre.errors?.['required'] && f.submitted">Movie year is Required</div>
+                    <div *ngIf="genre.errors?.['required'] && f.submitted">Movie Genre is Required</div>
             
-                </div>   
-
-                <div class="form-group">
-                    <label for="genreTextArea">Genre</label>
-                    <input type="text" class="form-control"
-                    id="genreTextArea"
-                    [(ngModel)]="form.genre" #genre="ngModel"
-                    placeholder="Enter the Movie genre"
-                    name="genre"
-                    required >
-
-                    <div *ngif="genre.errors?.['required'] && f.submitted">Movie genre is Required</div>
-            
-                </div>
+                </div>                 
 
                 <div class="form-group">
                     <label for="runtimeTextField">Runtime (in minutes)</label>
@@ -83,7 +70,7 @@
                     placeholder="Enter the Movie's Runtime in Minutes"
                     name="runtime"                    
                     required>
-                    <div *ngif="runtime.errors?.['required'] && f.submitted">Movie runtime is Required</div>
+                    <div *ngIf="runtime.errors?.['required'] && f.submitted">Movie runtime is Required</div>
             
                 </div>
 

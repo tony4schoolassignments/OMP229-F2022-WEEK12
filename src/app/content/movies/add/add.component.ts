@@ -10,11 +10,11 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MovieAddComponent implements OnInit {
 
   form: any = {
-    name: String, 
-    year: String, 
-    director: String,
-    genre: String,
-    runtime: Number
+    name: null, 
+    year: null, 
+    director: null,
+    genre: null,
+    runtime: null
   }
 
   isSuccessfull = true;
@@ -41,7 +41,7 @@ export class MovieAddComponent implements OnInit {
   }
   
   backToList(): void {
-    this.router.navigate(['/books/list']);
+    this.router.navigate(['/movies/list']);
   }
 
 }
